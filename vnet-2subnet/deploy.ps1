@@ -34,10 +34,10 @@ param(
  $deploymentName,
 
  [string]
- $templateFilePath = "./azuredeploy.json",
+ $templateFilePath = "./vnet-2subnet/azuredeploy.json",
 
  [string]
- $parametersFilePath = "./azuredeploy.parameters.json"
+ $parametersFilePath = "./vnet-2subnet/azuredeploy.parameters.json"
 )
 
 <#
