@@ -1,8 +1,10 @@
-$resourceGroupName = Read-Host -Prompt ""
-$location = Read-Host -Prompt ""
+$projectName = Read-Host -Prompt "Enter the same project name that is used for creating the key vault"
+$location = Read-Host -Prompt "Enter the same location that is used for creating the key vault (i.e. centralus)"
+$resourceGroupName = "${projectName}rg"
 
-New-AzResourceGroup -Name $resourceGroupName -Location $location
+New-AzResourceGroupDeployment `
+    -ResourceGroupName $resourceGroupName `
+    -TemplateFile "$HOME/azuredeploy.json" `
+    -TemplateParameterFile "$HOME/azuredeploy.parameters.json"
 
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri ""
-
-Write-Host ""
+Write-Host "Press [ENTER] to continue ..."
