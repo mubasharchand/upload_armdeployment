@@ -5,4 +5,4 @@ New-AzResourceGroup -Name $resourceGroupName -Location $location
 
 New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri ""
 
-Write-Host "Press [ENTER] to continue ..."
+Write-Host ""
